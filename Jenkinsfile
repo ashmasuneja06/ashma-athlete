@@ -5,6 +5,8 @@ pipeline {
         IMAGE_NAME = "athlete-api"
         VERSION = "v1.0"
         CONTAINER_NAME = "athlete-container"
+            PATH = "C:\\Program Files\\nodejs;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Users\\Hp\\AppData\\Roaming\\npm;%PATH%"
+
     }
 
     options {
@@ -72,7 +74,7 @@ pipeline {
                 echo "Stopping old container if exists..."
 
                 bat 'docker stop %CONTAINER_NAME% || exit 0'
-                bat 'docker rm %CONTAINER_NAME% || exit 0'
+                bat 'docker rm -f %CONTAINER_NAME% || exit 0'
 
                 echo "Running new container..."
                 bat 'docker run -d --name %CONTAINER_NAME% -p 3000:3000 %IMAGE_NAME%:%VERSION%'
