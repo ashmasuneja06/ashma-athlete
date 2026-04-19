@@ -1,0 +1,34 @@
+{
+    "name": "athlete-devops-system",
+    "version": "1.0.0",
+    "main": "src/app.js",
+    "scripts": {
+        "start": "node src/app.js",
+        "test": "jest --forceExit",
+        "test:ci": "jest --forceExit --coverage --coverageReporters=lcov --coverageReporters=text"
+    },
+    "jest": {
+        "testEnvironment": "node",
+        "coverageDirectory": "coverage",
+        "collectCoverageFrom": [
+            "src/**/*.js"
+        ]
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "mongoose": "^8.0.0"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "supertest": "^6.3.4"
+    },
+    "description": "CRUD API for athletes | Fully automated CI/CD pipeline using Jenkins | Dockerized deployment | Jest testing | SonarQube code quality | Security scanning using npm audit | Monitoring via health and metrics endpoints",
+    "directories": {
+        "test": "tests"
+    },
+    "keywords": ["devops", "jenkins", "nodejs", "express", "docker", "sonarqube"],
+    "author": "Ashma Suneja",
+    "license": "ISC",
+    "type": "commonjs"
+}
