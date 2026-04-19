@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "dotenv": "^16.0.3",
-        "express": "^4.18.2",
+        "express": "^4.22.1",
         "mongoose": "^8.0.0"
     },
     "devDependencies": {
@@ -27,7 +27,14 @@
     "directories": {
         "test": "tests"
     },
-    "keywords": ["devops", "jenkins", "nodejs", "express", "docker", "sonarqube"],
+    "keywords": [
+        "devops",
+        "jenkins",
+        "nodejs",
+        "express",
+        "docker",
+        "sonarqube"
+    ],
     "author": "Ashma Suneja",
     "license": "ISC",
     "type": "commonjs"
