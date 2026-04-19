@@ -10,16 +10,13 @@ app.use('/athletes', athleteRoutes);
 app.get('/health', (req, res) => {
     res.status(200).json({ status: "UP", time: new Date() });
 });
+
 app.get('/metrics', (req, res) => {
     res.json({
         requests: 120,
         uptime: process.uptime(),
         status: "healthy"
     });
-});
-
-app.listen(3000, () => {
-    console.log("Athlete DevOps API running on port 3000");
 });
 
 module.exports = app;
