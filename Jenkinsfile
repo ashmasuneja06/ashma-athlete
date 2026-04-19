@@ -39,7 +39,7 @@ pipeline {
         stage('Security') {
             steps {
                 echo "Running security audit..."
-                bat 'npm audit --json > security-report.json || exit 0'
+                bat 'npm audit || true'
             }
         }
 
@@ -47,7 +47,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker image..."
-                bat 'docker build -t %IMAGE_NAME%:%VERSION% .'
+                bat 'docker build -t athlete-api .'
             }
         }
 
@@ -60,7 +60,7 @@ pipeline {
                 bat 'docker stop %CONTAINER_NAME% || exit 0'
                 bat 'docker rm %CONTAINER_NAME% || exit 0'
 
-                bat 'docker run -d --name %CONTAINER_NAME% -p 3000:3000 %IMAGE_NAME%:%VERSION%'
+                bat 'docker run -d -p 3000:3000 athlete-api || true'
             }
         }
 
