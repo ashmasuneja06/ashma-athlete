@@ -6,9 +6,12 @@ app.use(express.json());
 const athleteRoutes = require('./routes/athleteRoutes');
 app.use('/athletes', athleteRoutes);
 
-// MONITORING ENDPOINT (IMPORTANT FOR HD)
 app.get('/health', (req, res) => {
-    res.status(200).json({ status: "UP", time: new Date() });
+    res.send('OK');
+});
+
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
 });
 
 app.get('/metrics', (req, res) => {
